@@ -2,12 +2,12 @@ import axios from "axios"
 import { useState } from "react"
 
 function Add(){
-    const [title,setTitle] = useState('')
+    const [task,setTitle] = useState('')
     const [description,setDescription] = useState('')
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        axios.post('http://127.0.0.1:8000/api/todo/',{title,description}).then(res=>{
+        axios.post('http://127.0.0.1:8000/api/todo/',{task,description}).then(res=>{
             setTitle('')
             setDescription('')
         }).catch(error=>console.log(error.message)
